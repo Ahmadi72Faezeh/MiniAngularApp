@@ -1,0 +1,11 @@
+<div class="card" style="height: 16rem">
+    <div class="card-body">
+        <h6 class="card-subtitle mb-2 text-body-secondary">{{post.title}}</h6>
+        <p class="card-text">{{post.body}}</p>
+
+    </div>
+    <div class="card-footer">
+        <button type="button" class="btn btn-dark btn-sm me-2" routerLink="/edit-post/{{post.id}}">Edit</button>
+        <app-delete-modal [id]="post.id" (deleteItem)="refreshList($event)"></app-delete-modal>
+    </div>
+</div>

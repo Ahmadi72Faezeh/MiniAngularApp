@@ -1,0 +1,47 @@
+<div class="container">
+    <div class="row p-5">
+        <div *ngIf="productItem.length !==0 else empty ">
+            <table class="table">
+                <thead>
+                <tr>
+                    <th scope="col">Name</th>
+                    <th scope="col">Image</th>
+                    <th scope="col">Quantity</th>
+                    <th scope="col">Price</th>
+
+                </tr>
+                </thead>
+                <tbody>
+                <tr *ngFor="let item of productItem">
+                    <td colspan="col" class="pt-4">{{item.title}}</td>
+                    <td colspan="col"><img style="height: 80px; width: 80px" [src]="item.image" [alt]="item.title"></td>
+                    <td colspan="col" class="pt-4">
+                        <span class="text-success fw-bolder fs-5 cursor-pointer" (click)="increase(item.id)">+</span>
+                        <span class="mx-2">{{item.quantity}}</span>
+                        <span class="text-danger fw-bolder fs-4 cursor-pointer" (click)="decrease(item.id)">-</span>
+                    </td>
+                    <td colspan="col" class="pt-4">${{item.price * item.quantity}}</td>
+                    <td colspan="col" class="pt-4"><em class="bi bi-trash3 text-danger cursor-pointer"
+                                                       (click)="deleteItem(item.id)"></em></td>
+
+                </tr>
+                </tbody>
+                <tfoot>
+                <td colspan="2" class="fw-bolder">total : {{total}}</td>
+                <td colspan="2">
+                    <div class="d-flex justify-content-end">
+                        <button type="button" class="btn btn-dark btn-sm mt-2" (click)="removeItems()">Clear List
+                        </button>
+                    </div>
+                </td>
+                </tfoot>
+            </table>
+        </div>
+        <ng-template #empty>
+            <app-empty-list></app-empty-list>
+
+        </ng-template>
+
+
+    </div>
+</div>

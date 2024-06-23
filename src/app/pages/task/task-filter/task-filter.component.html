@@ -1,0 +1,11 @@
+<div class="row my-5">
+    <h4>Filter</h4>
+    <div class="col-3">
+            <select [ngModel]="limit" (ngModelChange)="selectLimit($event)" class="form-select" aria-label="Default select example">
+                <option value="10">10</option>
+                <option value="20">20</option>
+                <option value="50">50</option>
+            </select>
+    </div>
+</div>
+

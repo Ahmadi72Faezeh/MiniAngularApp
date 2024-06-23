@@ -1,0 +1,26 @@
+<div class="card" style="width: 18rem; height: 26rem" >
+    <div class="p-3">
+        <img [src]="product.image" class="card-img-top" style="height: 200px ; " [alt]="product.title">
+    </div>
+    <div class="card-body">
+        <div class="row">
+            <p class="card-text text-center">{{product.title}}</p>
+        </div>
+    </div>
+    <div class="card-footer">
+        <div class="row">
+            <div class="col-6">
+                <p class="card-text">${{product.price}}</p>
+            </div>
+            <div class="col-6">
+                <div class="d-flex justify-content-end">
+                    <button type="button" class="btn btn-dark btn-sm" (click)="buyProduct(product)">Add to basket</button>
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+
+
+</div>

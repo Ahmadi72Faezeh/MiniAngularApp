@@ -1,0 +1,41 @@
+<div class="card">
+    <div class="card-body">
+        <div class="row">
+            <div class="col-10">
+                <h6 class="card-subtitle mb-2 text-body-secondary">{{task.title}}</h6>
+            </div>
+            <div class="col-2">
+                <div class="row">
+                    <div class="col-6">
+                        <p class="card-text mt-1" *ngIf="!task.completed && !loading ">
+                            <em class="bi bi-check2 fs-5 text-dark cursor-pointer" (click)="completedTask(task)"></em>
+                        </p>
+
+                        <p class="card-text mt-1" *ngIf="task.completed && !loading">
+                            <em class="bi bi-check2-all fs-5 text-success cursor-pointer"
+                                (click)="completedTask(task)"></em>
+                        </p>
+                        <div *ngIf="loading" class="spinner-border text-secondary ard-text mt-2 pt-1 spinner-border-sm"
+                             role="status">
+                            <span class="visually-hidden">Loading...</span>
+                        </div>
+
+
+                    </div>
+
+                    <div class="col-6 d-flex justify-content-center">
+                        <button type="button" class="btn" (click)="deleteTask(task.id)"><em
+                                class="bi bi-trash3 fs-6 text-danger"></em></button>
+                    </div>
+
+                </div>
+
+
+            </div>
+
+        </div>
+
+
+    </div>
+</div>
+
